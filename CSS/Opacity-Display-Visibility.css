@@ -1,0 +1,14 @@
+img {
+    width: 200px;
+    height: auto;
+    transition: 1.5s;
+}
+
+input:checked ~ img {
+    /* 1. Nếu muốn biến mất khỏi giao diện */
+    /* 𝗱𝗶𝘀𝗽𝗹𝗮𝘆: 𝗻𝗼𝗻𝗲; */
+    /* 2. Nếu muốn ẩn nhưng vẫn chiếm không gian */
+    /* 𝘃𝗶𝘀𝗶𝗯𝗶𝗹𝗶𝘁𝘆: 𝗵𝗶𝗱𝗱𝗲𝗻; */
+    /* 3. Nếu muốn mờ dần và không tương tác được */
+    opacity: 0;
+}

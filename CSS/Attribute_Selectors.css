@@ -1,0 +1,38 @@
+[href] {
+    /* Thay đổi toàn bộ màu của thẻ href */    
+    color: blue;
+    text-decoration: underline;
+}
+
+a [href] {
+    /* Chỉ thay đổi màu của thẻ a */
+    color: red;
+}
+
+[target ="_blank"] {
+    /* Chỉ thay đổi màu của thẻ a có target là _𝗯𝗹𝗮𝗻𝗸 */
+    color: green;
+}
+
+/* _____________________________________________________________________________________________________________________________ */
+/* Attribute Selectors Part 2 */
+[title ="Facebook"] {
+    /* Chỉ thay đổi màu của thẻ a có title là Facebook */
+    color: orange;
+}
+
+[title ^="Facebook.com"] {
+    /* Chỉ thay đổi màu của thẻ a có title là Facebook.com */
+    color: purple;
+}
+
+
+/* ______________________________________________________________________________________________________________________________ */
+/* Attribute Selectors Part 2.1 */
+
+/* Lưu ý: *= "Twitter" là phần tử có title chứa "Twitter" ở bất kỳ đâu
+          ^= "Twitter" là phần tử có title bắt đầu bằng "Twitter"
+          $= "Twitter" là phần tử có title kết thúc bằng "Twitter"
+          |= "Twitter" là phần tử có title bắt đầu bằng "Twitter" hoặc "Twitter-"
+          ~= "Twitter" là phần tử có title chứa từ "Twitter" (nghĩa là có thể có các từ khác xen kẽ)
+*/ 

@@ -1,0 +1,39 @@
+/* 
+Priority Level : Mức độ ưu tiên (Mạnh - Yếu)trong CSS
+Inline Style > ID Selector > Class Selector > Type Selector > Universal Selector
+
+    1. !important
+    2. Inline Style (Viết trong thẻ HTML)
+    3. ID Selector (#ID)
+    4. Class Selector, Attribute Selector, Pseudo-Class
+    5. Type Selector, Pseudo-Element (h, div, span, a, ...)
+    6. Universal Selector: Bộ chọn chung
+    7. Inheritance : Kế thừa
+    8. Source Order : Thứ tự nguồn
+    9. Browser Default : Mặc định trình duyệt
+*/
+/* Demo CSS */
+
+/* Universal Selector */
+* {
+    color: rgb(255, 0, 0) !important;
+    font-size: 16px;
+}
+
+/* Element Selector */
+h1 {
+    color: blue;
+    font-size: 24px;
+}
+
+/* Class Selector */
+.demo {
+    color: green;
+    font-size: 18px;
+}
+
+/* ID Selector */
+*theh1 {
+    color: red;
+    font-size: 22px;
+}

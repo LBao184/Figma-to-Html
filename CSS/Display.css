@@ -1,0 +1,24 @@
+/* INLINE ELEMENT: cho phần tử nằm trên cùng 1 dòng
+*Lưu ý: không áp dụng được cho margin-top, bottom
+    và width, height,
+*/
+
+.line2 {
+    padding: 30px;
+    display: inline;
+}
+
+
+/* INLINE-BLOCK: là sự kết hợp của inline và block 
+                 có các chức năng mà inline bị hạn chế
+*/
+
+/* DISPLAY-BLOCK: cho phần tử chiếm toàn bộ chiều ngang của khung chứa
+    và tạo một dòng mới cho phần tử tiếp theo
+   DISPLAY-NONE: Ẩn phần tử khỏi giao diện, xóa cả không gian chiếm
+   1. Display: flex : Hiển thị phần tử dưới dạng khung linh hoạt
+   2. Display: grid : Hiển thị phần tử dưới dạng lưới
+   3. Display: inline-block : Hiển thị phần tử dưới dạng khối nội tuyến
+   4. Display: inline : Hiển thị phần tử dưới dạng nội tuyến
+*/
+

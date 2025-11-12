@@ -1,0 +1,116 @@
+/* 
+𝗕𝗼𝘅 𝗠𝗼𝗱𝗲𝗹
+1. Content (Nội dung): Đây là phần chứa nội dung thực tế của phần tử, chẳng hạn như văn bản, hình ảnh hoặc các phần tử con khác.
+2. Padding (Khoảng đệm): Khoảng cách giữa nội dung và viền của phần tử. Padding tạo ra không gian bên trong phần tử, giúp nội dung không bị dính sát vào viền.
+3. Border (Viền): Viền bao quanh phần tử, có thể có màu sắc, độ dày và kiểu dáng khác nhau. Viền nằm giữa padding và margin.
+4. Margin (Lề): Khoảng cách giữa viền của phần tử và các phần tử xung quanh nó. Margin tạo ra không gian bên ngoài phần tử, giúp tách biệt các phần tử với nhau.
+Tổng cộng, các thành phần này tạo nên "hộp" của một phần tử trong CSS, và việc hiểu rõ về Box Model là rất quan trọng để thiết kế giao diện web hiệu quả.
+*/
+
+.p1 {
+    width: 300px; /* Chiều rộng của phần tử */
+    height: 150px; /* Chiều cao của phần tử */
+    padding: 20px; /* Khoảng đệm bên trong phần tử */
+    text-align: center;
+
+    /* 
+    Các Padding khác.
+    1. padding-top: 20px; (Khoảng đệm trên)
+    2. padding-right: 20px; (Khoảng đệm bên phải)
+    3. padding-bottom: 20px; (Khoảng đệm dưới)
+    4. padding-left: 20px; (Khoảng đệm bên trái)
+    5. padding: 10px 20px; (Khoảng đệm trên và dưới là 10px, bên phải và trái là 20px)
+    6. padding: 10px 15px 20px 25px; (Khoảng đệm trên là 10px, bên phải là 15px, dưới là 20px, bên trái là 25px)
+    7. padding: 10px 15px 20px; (Khoảng đệm trên là 10px, bên phải và trái là 15px, dưới là 20px)
+    8. padding: 10px 15px; (Khoảng đệm trên và dưới là 10px, bên phải và trái là 15px)
+    */
+
+    border: 5px solid blue; /* Viền của phần tử */
+    margin: 30px; /* Lề bên ngoài phần tử */
+    background-color: lightgray; /* Màu nền của phần tử */
+    box-sizing: border-box; /* Bao gồm padding và border trong kích thước tổng thể */
+}
+
+/* _______________________________________________________________________________________________________________________________________________________ */
+/* 
+MARGIN COLLAPSE: Khoảng cách trên dưới trái phải giữa 2 phần tử liền kề
+    1. margin-top:      khoảng cách bên trên
+    2. margin-bottom:   khoảng cách bên dưới
+    3. margin-left:     khoảng cách bên trái
+    4. margin-right:    khoảng cách bên phải
+*/
+
+.box {
+    width: 200px;
+    height: 200px ;
+    border: 5px solid red;
+}
+
+.box1 {
+    margin-bottom: 50px;
+}
+
+.box2 {
+    margin-top: 70px;
+}
+
+/* _______________________________________________________________________________________________________________________________________________________ */
+/* 
+BORDER-RADIUS: Bo góc viền của phần tử
+    1. border-radius: 10px; (Bo đều tất cả các góc)
+    2. border-top-left-radius: (n)px; (Bo góc trên bên trái)
+    3. border-top-right-radius: (n)px; (Bo góc trên bên phải)
+    4. border-bottom-right-radius: (n)px; (Bo góc dưới bên phải)
+    5. border-bottom-left-radius: (n)px; (Bo góc dưới bên trái)
+
+*/
+
+
+
+/* _______________________________________________________________________________________________________________________________________________________ */
+/* 
+OUTLINE: Đường viền bao quanh mép ngoài của đối tượng 
+OUTLINE-OFFSET: Khoảng cách của đường viền phần tử đến phần tử khác
+*Lưu ý: Outline không áp dụng nhiều chiều (Left, right, top, bottom)
+        Không tăng thêm kích thước phần tử
+*/
+
+.outline {
+    width: 100px;
+    height: 100px;
+    border: 10px solid red;
+    /* OUTLINE */
+    outline: 20px solid blue;
+    /* OUTLINE-OFFSET */
+    outline-offset: 10px;
+    margin: 40px;
+}
+
+/* _______________________________________________________________________________________________________________________________________________________ */
+/*
+BOX-SIZING: 
+*/ 
+
+.hop {
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    border: 10px solid green;
+    /* BOX-SIZING */
+    box-sizing: content-box;
+}
+
+.hop2{
+    width: 160px;
+    height: 210px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+/* CLIP-PATH: cắt hình nền theo hình dạng chỉ định
+1. circle( (n)px): hình tròn
+2. ellipse( (n)px): hình elip
+3. inset( (n)px): hình chữ nhật bo góc
+4. polygon( (n)px): đa giác
+ */
+

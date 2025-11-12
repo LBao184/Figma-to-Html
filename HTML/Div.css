@@ -1,0 +1,36 @@
+body {
+    background-color: black;
+    color: white;
+}
+/* 𝗧á𝗰 𝗱ụ𝗻𝗴 𝗹ê𝗻 𝘁𝗵ẻ 𝗽 𝗻ằ𝗺 𝘁𝗿𝗼𝗻𝗴 𝗱𝗶𝘃
+div p {
+    color: aqua;
+}
+ Tác dụng lên thẻ p nằm trong div có class loichuc 
+.loichuc p {
+    font-size: 30px;
+}
+ div >p: chỉ tác động vào thẻ con, trong div 
+div > p{
+    color: yellow;
+} 
+
+div + p: chỉ tác động vào thẻ p đứng ngay sau div */
+/* h1 + h2 {
+    color: red;
+} */
+
+/* .demo + h3 {
+    color: rgb(0, 123, 255);
+} */
+
+.demo.demo2 + h3 {
+    color: rgb(21, 255, 0);
+}   
+/* div ~ p: tác động vào tất cả thẻ khối sau nó, không cần phải đứng ngay sau nó
+VD: div ~ div hoặc div ~ a
+
+h2 ~ p {
+    color: green;
+} */
+

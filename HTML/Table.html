@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Table_Label</title>
+    </head>
+<body>
+
+    <h1>Thẻ Table trong HTML</h1>
+    <!-- Thẻ Table: sử dụng để hiển thị dữ liệu dạng bảng -->
+    <table border="5">
+        <!-- border: xác định độ dày đường viền của bảng
+            tr (Table Row): thẻ dùng để tạo một hàng trong bảng
+            th (Table Header): thẻ dùng để tạo một ô tiêu đề trong bảng, thường được đặt ở đầu hàng hoặc cột
+            td (Table Data): thẻ dùng để tạo một ô dữ liệu trong bảng 
+            tbody: nhóm các phần tử chính trong bảng
+            thead: nhóm các phần tử tiêu đề trong bảng
+            tfoot: nhóm các phần tử chân trang trong bảng
+        -->
+        <tr>
+            <th>STT</th>
+            <th>Tên</th>
+            <th>Tuổi</th>
+            <th colspan="2">Địa chỉ</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td rowspan="2">Nguyễn Văn A</td>
+            <td>20</td>
+            <td>Hà Nội</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Trần Thị B</td>
+            <td>22</td>
+            <td>Hồ Chí Minh</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Lê Văn C</td>
+            <td>21</td>
+            <td>Đà Nẵng</td>
+        </tr>
+    </table>
+
+    <!-- Rowspan: sử dụng để gộp nhiều ô trong cùng một cột -->
+    <!-- Colspan: sử dụng để gộp nhiều ô trong cùng một hàng -->
+
+
+    <!-- BÀI TẬP THAM KHẢO -->
+    <h2>Bài tập tham khảo</h2>
+    <table border="3">
+        <thead>
+            <tr>
+                <th>Tên sản phẩm</th>
+                <th>Giá sản phẩm</th>
+                <th>Số lượng còn lại</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Áo thun nam</td>
+                <td>100,000 VND</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Quần jean nữ</td>
+                <td>300,000 VND</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Giày thể thao</td>
+                <td>500,000 VND</td>
+                <td>30</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+            <td>Remake</td>    
+            <td>chỉ thống kê sản phẩm trong kho</td>
+            </tr>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!-- Khai báo phiên bản mới nhất của HTML (hiện tại là HTML5) -->
+<html lang="en">
+    <!-- lang: ngôn ngữ sử dụng trong quá trình tìm kiếm -->
+    <!-- en: tiếng anh -->
+    <!-- vi: tiếng việt -->
+    <head>
+        <meta charset="UTF-8">
+        <!-- bảng mã kí tự: hỗ trợ kí tự ngoài bảng chữ cái tiếng anh: việt, trung, hàn,... -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Sử dụng để hỗ trợ multil screen size, hỗ trợ kích thước thiết bị PC, Mobile, macbook,... -->
+        <title>Shyred</title>
+        <!-- title: tiêu đề trang web -->
+    </head>
+<body>
+<!-- Body: Nội dung chính của trang web, bao gồm tiêu đề, đoạn văn, hình ảnh, video, v.v. -->
+    <!-- Thẻ p (Paragraph): sử dụng để chứa các đoạn văn bản
+        html thường bỏ qua các khoảng trắng thừa, xuống dòng nên mỗi khi muốn xuống dòng hoặc tách các đoạn
+        thì phải lặp lại thẻ p 
+            VD:
+    -->
+
+        <P>Tạo môi trường mới: Hạn chế ở một mình quá lâu, giảm xem những thứ dễ</P>
+        <P>thay vào đó tham gia hoạt động thể thao (bơi, chạy, tập gym nhẹ).</P>
+        <P>Kiểm soát tâm trí: Khi ham muốn xuất hiện</P>
+        <P>Kỷ luật nhỏ mỗi ngày: Bạn có thể tự đặt thử thách như</P>
+        <P>đổi lại mình sẽ… nghe nhạc, chơi game 30 phút, hoặc ăn món mình thích”.</P>
+
+
+    <!-- Thẻ b (Bold): văn bản in đậm 
+         Thẻ i (Italic): văn bản in nghiêng
+         Thẻ u (Underline): văn bản gạch chân
+                *3 thẻ này có thể lồng với nhau
+            VD:
+    -->
+        <p>
+            Ở <b>Việt Nam</b>, khái niệm công nghệ thông tin được hiểu và định nghĩa trong Nghị quyết Chính phủ 
+            <i>49/CP ký ngày 4 tháng 8 năm 1993</i>:<u>Công nghệ thông tin là tập hợp các phương pháp khoa học</u>,
+            các phương tiện và công cụ kỹ thuật hiện đại - chủ yếu là kỹ thuật máy tính và viễn thông
+            <b><i><u>CNTT</u></i></b>
+        </p>
+
+
+    <!-- Thẻ br (Break): văn bản xuống dòng,
+    gọn hơn khi phải dùng quá nhiều thẻ p
+        VD:
+     -->
+        <p>
+            Hãy can đảm vượt qua ngàn bão tố<br>
+            Bởi quanh ta nhịp sống chẳng nghỉ ngơi<br>
+            Mất mát ấy muôn đời ai cũng trải<br>
+
+            Quan trọng nhất là trái tim bạn đấy<br>
+            Đừng tổn thương mà hãy đập không ngừng<br>
+            Để hòa nhịp cùng hình bóng người thân<br>
+            Cho từng kỷ niệm khắc sâu thành vĩnh cửu
+        </p>
+
+
+    <!-- Thẻ hr (Horizontal Rule): tạo 1 đường kẻ ngang ngăn cách dòng  -->
+        <p> 1 bản nhạc yêu thích</p>
+        <hr>
+        <p> 1 trò chơi yêu thích</p>
+
+
+    <!-- Thẻ ul (Unordered List): danh sách không thứ tự
+         Thẻ ol (Ordered List): danh sách có thứ tự
+         Thẻ li (List Item): mục trong danh sách 
+            VD:     
+    -->
+    <p>Các ngôn ngữ lập trình phổ biến hiện nay:</p>
+    <ul>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>Java</li>
+        <li>C++</li>
+        <li>C#</li>
+    </ul>
+    <p>Các bước để học lập trình:</p>
+        <li>Chọn ngôn ngữ lập trình phù hợp với mục tiêu của bạn</li>
+        <li>Tìm hiểu các khái niệm cơ bản về lập trình</li>
+        <li>Thực hành viết mã thường xuyên</li>
+        <li>Tham gia cộng đồng lập trình để học hỏi và chia sẻ kiến thức</li>
+        <li>Tham gia các dự án thực tế để áp dụng kiến thức đã học</li>
+    <!-- 
+        Bonus:
+        <ol reverse></ol>: danh sách thứ tự đảo ngược (3-2-1)
+        <ol type=""></ol>: ký tự đặc biệt của danh sách (a, 1, I, A và các ký tự khác tùy ý)
+        * ul, ol, li có thể lồng nhau.
+    -->
+
+
+
+    <!-- Thẻ a (Anchor): tạo liên kết đến trang web khác, liên kết email, liên kết số điện thoại
+        href: thuộc tính của thẻ a, xác định địa chỉ URL của trang web liên kết 
+            VD:
+    --> 
+        <p>Truy cập vào trang web <a href="https://shyred.vn">Shyred</a> để học lập trình miễn phí!</p>
+        <a href="https://shyred.vn" taret="_self">Mở Link tại trang hiện tại</a><br>
+        <a href="https://shyred.vn" taret="_blank">Mở Link tại tab mới</a><br>
+                        <!-- target: thuộc tính của thẻ a, xác định cách mở liên kết
+                             _self: mở liên kết tại trang hiện tại (mặc định)
+                             _blank: mở liên kết tại tab mới
+                        -->
+        <a href="https://shyred.vn"> Mở tại trang hiện tại</a><br>
+                        <!-- Liên kết SĐT: tel -->  
+        <a href="tel:0123456789">Gọi điện cho chúng tôi</a><br>
+                        <!-- Liên kết Mail: mailto -->
+        <a href="mailto:info@shyred.vn">Gửi email cho chúng tôi</a><br>
+        <a href="mailto:info@shyred.vn?subject=Hỗ trợ&body=Nội dung cần hỗ trợ&Bcc=shyred@mail.com">Send Mail</a><br>
+        <!-- subject: tiêu đề mail
+             body: nội dung mail
+             Bcc: gửi bản sao ẩn đến email khác-->
+        <!-- NÂNG CAO: <a href="#">Shyred</a> 
+            # là liên kết nội bộ, khi click vào sẽ không chuyển trang
+            VD: <a href="https://www.google.com.vn">google.com.vn</a>
+        -->
+        <a href="https://www.Google.com/">Google</a><br>
+        <a href="#">Shyred</a>
+
+        <!-- Thẻ pre (Preformatted Text): sử dụng để hiển thị văn bản đã được định dạng trước, giữ nguyên khoảng trắng và dòng mới -->
+        <pre>
+            Đây     là một đoạn văn bản được định dạng trước.
+            Nó sẽ giữ    nguyên khoảng trắng và dòng mới.
+        </pre>
+
+    <!-- Thẻ Code: Giữ nguyên định dạng code, có thể kết hợp với thẻ pre -->
+    <code>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html lang="en"&gt; <br>
+        &lt;head&gt; <br>
+        &lt;meta charset="UTF-8"&gt; <br>
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; <br>
+        &lt;title&gt;Shyred&lt;/title&gt; <br>
+        &lt;/head&gt; <br>
+        &lt;body&gt; <br>
+        &lt;/body&gt; <br>
+        &lt;/html&gt;
+    </code>
+
+    <!-- Thẻ Table: sử dụng để hiển thị dữ liệu dạng bảng -->
+    <table border="5">
+        <!-- border: xác định độ dày đường viền của bảng
+            tr (Table Row): thẻ dùng để tạo một hàng trong bảng
+            th (Table Header): thẻ dùng để tạo một ô tiêu đề trong bảng, thường được đặt ở đầu hàng hoặc cột
+            td (Table Data): thẻ dùng để tạo một ô dữ liệu trong bảng -->
+        <tr>
+            <th>STT</th>
+            <th>Tên</th>
+            <th>Tuổi</th>
+            <th>Địa chỉ</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Nguyễn Văn A</td>
+            <td>20</td>
+            <td>Hà Nội</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Trần Thị B</td>
+            <td>22</td>
+            <td>Hồ Chí Minh</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Lê Văn C</td>
+            <td>21</td>
+            <td>Đà Nẵng</td>
+        </tr>
+    </table>
+
+
+    <!-- Thẻ div (Division): sử dụng để nhóm các phần tử HTML lại với nhau và áp dụng kiểu dáng hoặc định dạng chung cho chúng -->
+    <!-- Thẻ link (Link): tạo liên kết đến tài nguyên khác -->
+
+<!-- Thẻ h (heading): sử dụng để định nghĩa tiêu đề cho các phần của trang web (Cỡ chữ h1 là lớn nhất, h6 bé nhất) -->    
+    <h1>Chào mừng đến với Shyred</h1>
+    <h2>Chào mừng đến với Shyred</h2>
+    <h3>Chào mừng đến với Shyred</h3>
+    <h4>Chào mừng đến với Shyred</h4>
+    <h5>Chào mừng đến với Shyred</h5>
+    <h6>Chào mừng đến với Shyred</h6>
+
+    <!-- Thẻ sup: sử dụng để định nghĩa văn bản ở chỉ số trên cùng (superscript) -->
+    <!-- Thẻ sub: sử dụng để định nghĩa văn bản ở chỉ số dưới cùng (subscript) -->
+    <p>H<sup>2</sup>O là công thức hóa học của nước.</p>
+    <p>CO<sub>2</sub> là công thức hóa học của khí carbon dioxide.</p>
+
+    <!-- Thẻ Audio: sử dụng để nhúng âm thanh vào trang web -->
+    <audio controls>
+        <source src="Blue Archive_Music.mp3" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ thẻ audio.
+    </audio>
+    <!-- Thẻ Video: sử dụng để nhúng video vào trang web -->
+    <video width="320" height="240" controls>
+        <source src="Video.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ thẻ video.
+</body>
+</html>
+

@@ -1,0 +1,125 @@
+/* 
+⁡⁢⁢⁢:𝗵𝗼𝘃𝗲𝗿⁡ : Hiệu ứng khi di chuột vào
+⁡⁢⁢⁢:𝗮𝗰𝘁𝗶𝘃𝗲 ⁡: Hiệu ứng khi click vào
+⁡⁢⁢⁢:𝘃𝗶𝘀𝗶𝘁𝗲𝗱⁡ : Hiệu ứng khi thẻ đã được truy cập (thường dùng cho thẻ a)
+⁡⁢⁢⁢:𝗹𝗶𝗻𝗸⁡ : Hiệu ứng khi thẻ chưa được truy cập (thường dùng cho thẻ a)
+⁡⁢⁢⁢:𝗲𝗺𝗽𝘁𝘆 ⁡: Hiệu ứng khi thẻ không có nội dung bên trong (thường dùng cho thẻ div, p, span, a,...)
+⁡⁢⁢⁢:𝘁𝗮𝗿𝗴𝗲𝘁⁡ : Hiệu ứng khi thẻ được chọn (thường dùng cho thẻ a)
+*/
+/* ____________________________________________________________________________________________________________________________ */
+/* 𝗣𝘀𝗲𝘂𝗱𝗼 𝗖𝗹𝗮𝘀𝘀𝗲𝘀 𝗣𝗮𝗿𝘁 𝟭 (𝗛𝗼𝘃𝗲𝗿, 𝗔𝗰𝘁𝗶𝘃𝗲) */
+.Di-Chuot:hover {
+    color: red;
+    font-size: 20px;
+}
+
+.Giu-Chuot:active {
+    color: rgb(0, 238, 255);
+    font-size: 20px;
+}
+
+/* ____________________________________________________________________________________________________________________________ */
+/* 𝗣𝘀𝗲𝘂𝗱𝗼 𝗖𝗹𝗮𝘀𝘀𝗲𝘀 𝗣𝗮𝗿𝘁 𝟮 (𝗟𝗶𝗻𝗸, 𝗩𝗶𝘀𝗶𝘁𝗲𝗱) */
+.Click-Me:link {
+    color: Yellow;
+}
+
+.Click-Me:visited {
+    color: Pink;
+}
+
+.Click-Me-2:link {
+    color: rgb(242, 0, 255);
+}
+
+/* ____________________________________________________________________________________________________________________________ */
+/* 𝗣𝘀𝗲𝘂𝗱𝗼 𝗖𝗹𝗮𝘀𝘀𝗲𝘀 𝗣𝗮𝗿𝘁 𝟯 (𝗘𝗺𝗽𝘁𝘆, 𝗧𝗮𝗿𝗴𝗲𝘁) */
+.Div_Elm:empty {
+    height: 150px;
+    width: 150px;
+    background-color: orange;
+}
+
+.Div_Elm {
+    height: 150px;
+    width: 150px;
+    background-color: rgb(255, 0, 0);
+}
+
+h2:target {
+    color: rgb(15, 3, 255);
+    font-size: 20px;
+}
+
+
+
+/* ____________________________________________________________________________________________________________________________ */
+/* 𝗣𝘀𝗲𝘂𝗱𝗼 𝗖𝗹𝗮𝘀𝘀𝗲𝘀 𝗣𝗮𝗿𝘁 𝟰 (𝗖hild Selectors) */
+/* 
+:first-child: chọn thẻ là thẻ con đầu tiên    
+:last-child: chọn thẻ là thẻ con cuối cùng    
+:nth-child(n): chọn thẻ là thẻ con thứ n từ trên xuống    
+:nth-last-child(n): chọn thẻ là thẻ con thứ n từ dưới lên    
+:only-child: chọn thẻ là thẻ con duy nhất
+
+*Bổ sung: có thể thay (n) bằng (odd) hoặc (even) để chọn chẵn lẻ hoặc step (2n+1)
+*/
+
+.div-child p:first-child {
+    color: red;
+}
+
+.div-child p:last-child {
+    color: blue;
+}
+
+
+.div-child p:nth-child(2) {
+    color: green;
+}
+
+.div-child p:nth-last-child(2) {
+    color: orange;
+}
+
+.only p:only-child {
+    color: purple;
+}
+
+
+/* ____________________________________________________________________________________________________________________________ */
+/* 𝗣𝘀𝗲𝘂𝗱𝗼 𝗖𝗹𝗮𝘀𝘀𝗲𝘀 𝗣𝗮𝗿𝘁 𝟱 (Type Selectors) */
+/* 
+:first-of-type: chọn thẻ là thẻ con đầu tiên của loại thẻ đó
+:last-of-type: chọn thẻ là thẻ con cuối cùng của loại thẻ đó
+:nth-of-type(n): chọn thẻ là thẻ con thứ n của loại thẻ đó
+:nth-last-of-type(n): chọn thẻ là thẻ con thứ n của loại thẻ
+:only-of-type: chọn thẻ là thẻ con duy nhất của loại thẻ đó
+*/
+
+.div-type p:first-of-type {
+    color: red;
+}
+
+.div-type p:last-of-type {
+    color: blue;
+}
+
+.div-type p:nth-of-type(2) {
+    color: green;
+}
+
+.div-type p:nth-last-of-type(2) {
+    color: orange;
+}
+
+.div-type-only h1:only-of-type {
+    color: rgb(255, 0, 255);
+}
+
+/* ____________________________________________________________________________________________________________________________ */
+/* 𝗣𝘀𝗲𝘂𝗱𝗼 𝗖𝗹𝗮𝘀𝘀𝗲𝘀 𝗣𝗮𝗿𝘁 𝟲 (𝗡𝗼𝘁 𝗦𝗲𝗹𝗲𝗰𝘁𝗼𝗿𝘀) */
+.div-not:not(p) {
+    color: red;
+    font-size: 20px;
+}

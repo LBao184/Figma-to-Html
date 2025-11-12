@@ -1,0 +1,100 @@
+/* 
+​‌‍‌‍Nhóm 1: Flex-Container​
+    1.Justify-Content
+    2.Align-Items
+    3.Align-Content
+    4.Flex-Direction
+    5.Flex-Wrap
+    6.Flex-Flow
+​‌‍‌Nhóm 2: Flex-Item​
+    1.Order
+    2.Flex-Grow
+    3.Flex-Shrink
+    4.Flex-Basis
+    5.Align-Self
+*/
+* {
+    font-size: 10px;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    height: 200px;
+    background-color: aqua;
+/* _______________________________________NHÓM 1______________________________________ */
+/* 𝟭. 𝗝𝘂𝘀𝘁𝗶𝗳𝘆-𝗖𝗼𝗻𝘁𝗲𝗻𝘁 */
+    /* justify-content: start;          (khoảng cách phía trước) */
+    /* justify-content: end;            (khoảng cách phía sau) */
+    /* justify-content: center;         (căn giữa các box) */
+    /* justify-content: space-between;  (khoảng cách đều của các box) */
+     justify-content: space-around;     /*(khoảng cách đều cả 2 bên của các box) */
+    /* justify-content: space-evenly;   (khoảng cách đều nhau) */
+
+/* 𝟮. 𝗔𝗹𝗶𝗴𝗻-𝗜𝘁𝗲𝗺𝘀 */
+    /* align-items: stretch;            (mặc định) */
+    /* align-items: flex-start;         (căn lên trên) */
+    /* align-items: flex-end;           (căn xuống dưới) */
+    /* align-items: center;             (căn giữa theo chiều dọc) */
+    /* align-items: baseline;           (căn theo dòng chữ) */
+
+/* 𝟯. 𝗔𝗹𝗶𝗴𝗻-𝗖𝗼𝗻𝘁𝗲𝗻𝘁 */
+    /* align-content: stretch;          (mặc định) */
+    /* align-content: flex-start;       (căn lên trên) */
+    /* align-content: flex-end;         (căn xuống dưới) */
+    /* align-content: center;           (căn giữa theo chiều dọc) */
+    /* align-content: space-between;    (khoảng cách đều của các hàng) */
+    /* align-content: space-around;     (khoảng cách đều cả 2 bên của các hàng) */
+    /* align-content: space-evenly;     (khoảng cách đều nhau của các hàng) */
+/* 𝟰. 𝗙𝗹𝗲𝘅-𝗗𝗶𝗿𝗲𝗰𝘁𝗶𝗼𝗻 */
+    /* flex-direction: row;             (mặc định) */
+    /* flex-direction: row-reverse;     (ngược chiều kim đồng hồ) */
+    /* flex-direction: column;          (cột dọc) */
+    /* flex-direction: column-reverse;  (cột dọc ngược) */
+/* 𝟱. 𝗙𝗹𝗲𝘅-𝗪𝗿𝗮𝗽 */
+    /* flex-wrap: nowrap;               (mặc định) */
+    /* flex-wrap: wrap;                 (xuống dòng) */
+    /* flex-wrap: wrap-reverse;         (xuống dòng ngược) */
+/* 𝟲. 𝗙𝗹𝗲𝘅-𝗙𝗹𝗼𝘄 */
+    /* flex-flow: row wrap;             (hàng ngang xuống dòng) */
+    /* flex-flow: row-reverse wrap;     (hàng ngang ngược xuống dòng) */
+    /* flex-flow: column wrap;          (cột dọc xuống dòng) */
+    /* flex-flow: column-reverse wrap;  (cột dọc ngược xuống dòng) */
+
+/* _______________________________________NHÓM 2______________________________________ */
+/*  𝟭. 𝗢𝗿𝗱𝗲𝗿 */
+    /* Order: (n)                       (Thay đổi thứ tự các Items)   */
+
+/*  𝟮. 𝗙𝗹𝗲𝘅-𝗚𝗿𝗼𝘄 */
+    /* Flex-Grow: (n)                   (Số % chiếm thành hàng)  */
+
+/*  𝟯. 𝗙𝗹𝗲𝘅-𝗦𝗵𝗿𝗶𝗻𝗸 */
+    /* Flex-Shrink: (n)                 (Số % thu nhỏ thành hàng) */
+
+/*  𝟰. 𝗙𝗹𝗲𝘅-𝗕𝗮𝘀𝗶𝘀 */
+    /* Flex-Basis: (n) px               (Kích thước cơ bản của box) */
+
+/*  ‍𝟱. 𝗔𝗹𝗶𝗴𝗻-𝗦𝗲𝗹𝗳 */
+    /* Align-Self: auto;                (mặc định) */
+    /* Align-Self: flex-start;          (căn lên trên) */
+    /* Align-Self: flex-end;            (căn xuống dưới) */
+    /* Align-Self: center;              (căn giữa theo chiều dọc) */
+    /* Align-Self: baseline;            (căn theo dòng chữ) */
+}
+
+.Box1,
+.Box2,
+.Box3,
+.Box4,
+.Box5 {
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    color: white;
+    font-weight: bold;
+    background-color: blue;
+}
+

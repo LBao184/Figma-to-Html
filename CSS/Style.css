@@ -1,0 +1,146 @@
+/* ID Selector: khi chỉ muốn áp dụng cho một phần tử duy nhất -> dùng id
+   Ví dụ: #header { ... } hoặc #footer { ... }
+   Class Selector: khi muốn áp dụng cho nhiều phần tử -> dùng class
+*/
+
+/* *Selector: chung cho tất cả các phần tử 
+    margin: lề ngoài
+    padding: lề trong
+    box-sizing: border-box: tính cả padding và border vào kích thước phần tử
+*/
+/* 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+*/
+
+/* Element.Class: Chỉ định 1 phần tử muốn thay style 
+    Ví dụ: h1.Title { ... }
+*/
+h1.Title {
+    color: red;
+}
+/* Đặt màu nền cho trang web */
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+/* Căn giữa và định dạng chữ cho đoạn văn */
+p {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+}
+
+h1 {
+    /* Định dạng chữ */
+    font-style: italic;
+    /* Màu chữ */
+    color: rgb(0, 208, 255);
+    /* Font chữ */
+    font-family: Arial, Helvetica, sans-serif;
+    /* Chuyển chữ hoa/thường */
+    text-transform: uppercase;
+    /* Căn giữa */
+    text-align: center;
+    /* Cỡ chữ */
+    font-size: 24px;
+    /* Độ dày chữ */
+    font-weight: bold;
+}
+/*  Opacity: Quy định độ trong suốt
+     0.0 -> 1.0 hoặc 0% -> 100% */
+h2 {
+    opacity: 0.5;
+}
+
+/* Display:none :Ẩn phần tử khỏi giao diện, xóa cả không gian chiếm
+    opacity: 0.5; */
+h2 {
+
+    display: none;
+}
+
+/* Visibility: Quy định tính hiển thị của phần tử
+   - hidden: Ẩn phần tử nhưng vẫn chiếm không gian
+   - visible: Hiển thị phần tử */
+h2 {
+    visibility: hidden;
+}
+
+/* Nếu muốn liệt kê nhiều phần tử có chung 1 style có thể viết tắt như sau:
+ h1, h2, h3 {
+    color: blue;
+} 
+hoặc
+
+h1.title, h2.title, h3.title {
+    color: blue;
+}
+*/
+
+/* TYPOGRAPHY 
+    1. Text-decoration: none                (Xóa gạch chân)
+                        underline           (Thêm gạch chân)
+                        line-through        (Gạch ngang)
+                        overlive            (Gạch trên đầu)
+                        underline dotted    (thêm gạch dưới kiểu khác)
+
+________________________________________________________________________________________________________
+    2. Text-indent : Thụt lề (+)(-)
+
+________________________________________________________________________________________________________
+    3. Text-Transform: CApitalize (Viết hoa chữ cái đầu)
+                       Lowercase  (Viết thường toàn bộ văn bản)
+                       Uppercase  (Viết hoa toàn bộ văn bản)
+
+________________________________________________________________________________________________________
+    4. Text-Shadow: (n)px (n)px (n)px (Bóng của văn bản)
+    *Độ bóng theo trục X (ngang), Y (Dọc), Độ mờ
+________________________________________________________________________________________________________
+    5. White-Space: Nowrap      (Không xuống dòng kể cả chạm tớilề))
+                    Pre         (giữ nguyên định dạng code (Giống thẻ pre))
+
+________________________________________________________________________________________________________
+    6. Overflow: Hidden (Ẩn phần thừa)
+                 Scroll (Tạo thanh cuộn)
+                 Auto   (Tự động tạo 2 cái trên)
+________________________________________________________________________________________________________
+    7. Letter-Spacing: (n)px (Khoảng cách giữa các chữ)
+________________________________________________________________________________________________________
+    8. Word-Spacing: (n)px (Khoảng cách giữa các từ)
+_________________________________________________________________________________________________________
+    9. Line-Height: (n)px (Chiều cao dòng)
+_________________________________________________________________________________________________________
+    10. Font-Weight: normal (Bình thường)
+                     bold   (Đậm)
+                     bolder (Đậm hơn)
+                     lighter(Nhạt hơn)
+                     100 - 900 (Độ đậm nhạt chi tiết)
+_________________________________________________________________________________________________________
+    11. Box-shadow: (n)px   (n)px   (n)px   (n)px (Bóng của hộp)  color
+                    Trục X, Trục Y, Độ mờ,  Độ lan tỏa,            màu bóng
+_________________________________________________________________________________________________________
+    12. Text-overflow: ellipsis (Hiển thị dấu ... khi văn bản tràn)
+_________________________________________________________________________________________________________
+    13. Cursor: pointer (Khi hover chuột vào phần tử sẽ hiện con trỏ tay)
+_________________________________________________________________________________________________________
+    14. pointer-events: none (Vô hiệu hóa sự kiện chuột trên phần tử)
+_________________________________________________________________________________________________________
+    15. User-select: none (Không cho phép người dùng chọn văn bản)
+_________________________________________________________________________________________________________
+    16. Position: relative (Định vị tương đối)
+                  absolute (Định vị tuyệt đối)
+                  fixed    (Định vị cố định)
+                  sticky   (Định vị dính)
+                  kết hợp với hướng: top, bottom, left, right
+_________________________________________________________________________________________________________
+    17. Z-index: (n) (Quy định thứ tự xếp chồng của phần tử, số lớn hơn sẽ nằm trên)
+_________________________________________________________________________________________________________
+    18. Float-Layout: left (Phần tử nổi bên trái)
+                      right(Phần tử nổi bên phải)
+                      none (Phần tử không nổi)
+                      
+*/

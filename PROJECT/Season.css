@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Cấu trúc chung cho từng mùa */
+section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 60px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
+}
+
+/* Giao diện chính */
+#section1 {
+  background: url('./Background/BG 1.jpeg') no-repeat center center/cover;
+}
+#section1 .intro h1 {
+  font-size: 5em;
+  margin-top: 40px;
+}
+#section1 .intro h4 {
+  font-weight: 400;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+/* Header */
+header {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  padding: 0 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2em;
+  color: #fff;
+  user-select: none;
+}
+
+.Menu a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 40px;
+  font-weight: 500;
+  position: relative;
+}
+.Menu a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .4s;
+}
+.Menu a:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+/* Nút Login */
+.Login-button {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: 25px;
+}
+.Login-button:hover {
+  background: #fff;
+  color: #162938;
+}
+
+/* Nút cuộn */
+.scroll-btn {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #000;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.scroll-btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateX(-50%) scale(1.05);
+}
+
+/* Thanh Cuộn */
+::-webkit-scrollbar-track {
+  background: #ffffff00;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #00000000;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff00;
+}
+
+/* Background từng mùa */
+#section2 { background: url('./Background/Spring.jpeg') no-repeat center/cover; }
+#section3 { background: url('./Background/Summer.jpeg') no-repeat center/cover; }
+#section4 { background: url('./Background/Autumn.jpeg') no-repeat center/cover; }
+#section5 { background: url('./Background/Winter.jpeg') no-repeat center/cover; }
+
+/* Text trong từng section */
+#section2 h1, #section3 h1, #section4 h1, #section5 h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+#section2 p, #section3 p, #section4 p, #section5 p {
+  font-size: 1.2em;
+  max-width: 800px;
+  line-height: 1.6;
+}
+section h1, section p, section h4 {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+
+
+/* Áp dụng hiệu ứng tối viền - sáng giữa cho mọi section */
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+background: radial-gradient(
+  circle at center,
+  rgba(20, 30, 60, 0.1) 0%,
+  rgba(0, 0, 30, 0.6) 80%
+);
+
+  z-index: 0;
+}
+
+/* Giúp chữ và nút nổi lên trên overlay */
+section h1, h4{
+  position: relative ;
+  z-index: 1;
+}
+
+section p{
+  position: relative ;
+  z-index: 1;
+}
