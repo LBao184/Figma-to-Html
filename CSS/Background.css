@@ -1,7 +1,7 @@
 /* BACKGROUND
 background-repeat: lặp lại ảnh nền (áp dụng theo hướng XY)
-background-size: container (ảnh vừa với khhìnhhình, giữ vững tỉ lệ, không bị mất ảnh, nếu còn khoảng trống thì ảnh sẽ lặp lại)
-                 cover     (ảnh vừa khớp với khhìnhhình, giữ nguyên tỉ lệ ảnh, tự động dãn ảnh ra nếu còn khoảng trống
+background-size: container (ảnh vừa với khung hình, giữ vững tỉ lệ, không bị mất ảnh, nếu còn khoảng trống thì ảnh sẽ lặp lại)
+                 cover     (ảnh vừa khớp với khung hình, giữ nguyên tỉ lệ ảnh, tự động dãn ảnh ra nếu còn khoảng trống
 background-position: top, top-left, top-right
                      bottom, bottom-left, bottom-right
                      left
