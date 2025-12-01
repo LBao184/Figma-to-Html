@@ -26,6 +26,8 @@ do {
 
 // ____________________________________________________________________________
 // Vòng lặp Vô Hạn While True trong JS
+// Cấu trúc (hình minh họa):
+        
 // Cú pháp:
 let k = 0;
 while (true) {
