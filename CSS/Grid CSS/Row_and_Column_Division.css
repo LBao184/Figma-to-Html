@@ -1,0 +1,46 @@
+/* Beauty CSS */
+.box1,
+.box4,
+.box5 {
+    background: aqua;
+}
+
+.box2,
+.box3 {
+    background: blue;
+}
+
+.box {
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: grid ;
+}
+
+/* CÁCH SỬ DỤNG GRID ĐỂ CHIA HÀNG VÀ CỘT */
+.container {
+    /* grid-template-columns: auto; */
+    grid-template-columns: 100px 200px; /* Chia 2 cột, cột 1 rộng 100px, cột 2 rộng 200px */
+    grid-template-rows: 50px 100px 50px; /* Chia 3 hàng, hàng 1 cao 50px, hàng 2 cao 100px, hàng 3 cao 50px */
+}
+
+/* GAP */
+.container {
+    grid-gap: 10px 20px; /* khoảng cách giữa các hàng và cột */
+    /* Cao dòng */
+    /* grid-row-gap: 10px; */
+    /* Rộng cột */
+    /* grid-column-gap: 20px; */
+    gap: 50px 15px;
+}
+
+/* Trong trường hợp có nhiều giá trị lặp lại thì dùng REPEAT */
+.container {
+    grid-template-columns: repeat(3, 100px); /* 3 cột đều rộng 100px */
+    grid-template-rows: repeat(2, 50px); /* 2 hàng đều cao 50px */
+}
+/*_______________________________________________________________________________________________________________________*/
+/* Chỉ định vị trí cụ thể của các phần tử */
