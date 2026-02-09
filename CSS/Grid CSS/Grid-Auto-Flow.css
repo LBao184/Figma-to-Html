@@ -1,0 +1,22 @@
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid blue;
+}
+
+.container {
+  display: grid;
+  /* Hướng mặc định của box là row */
+  grid-auto-flow: row;
+  /* Tự động sắp xếp theo hàng ngang và xuống dòng khi thêm phần tử từ 5 trở lên */
+  grid-template-columns: repeat(5, 100px);
+  
+  
+  /* Hàng */
+  /* Chuyển đổi sang column */
+  grid-auto-flow: column;
+  /* Chạm tới hàng thứ 3 thì thêm 1 cột bên cạnh */
+  grid-template-rows: repeat(3, 50px);
+}
+
