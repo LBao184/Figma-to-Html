@@ -1,0 +1,44 @@
+Khái niệm cơ bản:
+________________
+• Hiểu Git là gì
+• Hiểu Git dùng để làm gì
+• Cài Git
+• Tạo repository đầu tiên
+________________
+
+1. Git là gì?
+- là 1 hệ thống quản lý phiên bản (VCS: Vesion Control System)
+Nó giúp bạn:
+    + Lưu các phiên bản code
+    + Quay lại phiên bản cũ (nếu bị code lỗi)
+    + Làm việc nhóm dễ dàng
+    + Theo dõi ai thay đổi code
+
+Ví dụ:
+    Version 1: Tạo file index.html
+    Version 2: Thêm CSS
+    Version 3: Thêm JavaScript
+(Git lưu lại tất cả các version này)
+
+2. Git hoạt động như thế nào?
+        Git có 3 vùng quan trọng:
+            Working Directory 
+                    ↓
+              Staging Area
+                    ↓
+               Repository
+
+*Chú thích:
+Working Directory: Nơi bạn viết code (VS code)
+Staging Area:      Nơi chuẩn bị Commit
+Repository:        Nơi lưu lịch sử
+
+    Workflow của Git:
+        Code -> Add -> Commit
+
+
+Kiến thức cần nhớ:
+git init
+git status
+git add
+git commit
