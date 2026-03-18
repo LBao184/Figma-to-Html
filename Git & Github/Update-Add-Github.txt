@@ -1,0 +1,85 @@
+Quy trình chuẩn khi cập nhật code lên GitHub
+
+_____________________________________________
+Bước 1 — Kiểm tra trạng thái project
+        ​‌‍‌‍git status​
+
+Ý nghĩa
++ Git sẽ cho bạn biết:
++ file nào đã thay đổi
++ file nào chưa được theo dõi
++ file nào chuẩn bị commit
+
+Ví dụ kết quả:
+
+modified: about.txt
+untracked: index.html
+
+Điều này nghĩa là:
+
+about.txt đã bị sửa
+index.html là file mới
+
+_____________________________________________
+Bước 2 — Thêm thay đổi vào Staging Area
+        ​‌‍‌git add .​
+
+Ý nghĩa
+Lệnh này nói với Git:
+“Tôi muốn đưa tất cả thay đổi này vào commit tiếp theo”.
+
+Git sẽ đưa các thay đổi từ:
+
+    Working Directory
+           ↓
+      Staging Area
+
+Ví dụ:
+
+index.html
+about.txt
+style.css
+
+Tất cả được chuẩn bị commit.
+
+_____________________________________________
+Bước 3 — Tạo commit
+        ​‌‍‌git commit -m "add new feature"​
+
+Ý nghĩa
+
+Git sẽ:
++ lưu một phiên bản mới của project
++ ghi lại message mô tả thay đổi
+
+Ví dụ commit message:
+    add login page
+    fix navbar bug
+    update about section
+
+Git lúc này lưu:
+
+Version 1
+Version 2
+Version 3
+
+_____________________________________________
+Bước 4 — Đẩy code lên GitHub
+        ​‌‍‌git push​
+
+Ý nghĩa
++ Git sẽ gửi commit mới từ máy bạn lên:
+
+     Local Repository
+         ↓
+    GitHub Repository
+
+Sau đó project trên GitHub sẽ được cập nhật.
+Toàn bộ workflow
+
+
+Developer thường làm:
+    git status
+    git add .
+    git commit -m "update feature"
+    git push
