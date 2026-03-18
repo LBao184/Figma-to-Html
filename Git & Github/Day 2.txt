@@ -1,0 +1,60 @@
+TỔNG KẾT LÊNH CẦN NHỚ TRONG BUỔI 2:
+1. Lệnh kết nối Git với Github:
+</> Terminal:
+        git remote add origin https://github.com/LBao184/git-practice.git
+
+*Chú thích:
++ git remote = Quản lý server
++ origin =     Tên Server
+(lệnh để kết nối project trên máy với Github)
+
+_____________________________________________
+2. Kiểm tra Branch:
+</> Terminal:
+        git branch
+
+_____________________________________________
+3. Push code lên Github
+</> Terminal:
+        git push -u origin master
+
+*Chú thích:
++ push   = Gửi code lên Github (Server)
++ origin = Github
++ master = branch
+
+_____________________________________________
+4. Push code những lần sau:
+Sau khi đẩy code lên git lần đầu, ta chỉ cần
+</> Terminal:
+        git push
+
+_____________________________________________
+5. Kiểm tra lịch sử commit
+</> Terminal:
+        git log
+
+_____________________________________________
+
+WorkFlow Git:
+               Code
+                ↓
+              status
+                ↓
+             git add .
+                ↓
+        git commit -m "message"
+                ↓
+             git push
+
+
+TỔNG HỢP LỆNH NGÀY 2:
+git init
+git status
+git add .
+git commit -m "message"
+git log
+git branch
+git remote add origin URL
+git push -u origin master
+git push
