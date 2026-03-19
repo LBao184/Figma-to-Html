@@ -1,0 +1,62 @@
+3 LỆNH:
++ git clone
++ git pull 
++ git fetch
+
+_____________________________________________
+1. GIT CLONE - Tải project từ Github về máy
+</> Terminal:
+        git clone link_repository
+
+ví dụ: git clone https://github.com/user/project.git
+
+Git sẽ: 
+1. tải toàn bộ project từ Github
+2. Tạo một Folder trên máy bạn
+3. Tải toàn bộ lịch sử commit
+
+_____________________________________________
+2. GIT PULL - Cập nhật code mới nhất
+</> Terminal
+        git pull
+
+Git pull: Tải commit và cập nhật code
+    Git sẽ:
+            GitHub repository
+                    ↓
+            tải commit mới
+                    ↓
+            cập nhật vào project local
+
+_____________________________________________
+3 . GIT FETCH - Lấy thông tin commit mới
+</> Terminal:
+        git fetch
+    
+    git sẽ: tải commut mới nhưng không cập nhật code
+    thường ta nên: git fetch rồi mới git pull (Để kiểm tra trước khi cập nhật)
+
+WorkFlow khi làm việc với project có sẵn
+</> Terminal
+    git clone repo
+    git repo
+    git pull
+
+sau đó bạn sửa code và dùng workflow cũ:
+    git add  .
+    git commit -m "update feature"
+    git push
+
+Sơ đồ: 
+        GitHub
+            ↓
+        git clone
+            ↓
+        Project trên máy
+            ↓
+        Sửa code
+            ↓
+        git push
+            ↓
+        GitHub
+
