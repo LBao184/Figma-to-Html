@@ -1,0 +1,122 @@
+4 LỆNH:
++ git branch
++ git checkout
++ git switch
++ git merge
+
+_____________________________________________
+1. Branch (Nhánh) là gì?
+- giống như 1 bản sao của project đêr thử nghiệm code
+Ví dụ:
+main
+ │
+ ├── thêm login
+ ├── sửa giao diện
+ └── fix bug
+    *nếu sửa trực tiếp trên main mà code lỗi -> Project chính bị ảnh hưởng
+    vì vậy ta cần tạo ra Branch mới để làm việc
+Ví dụ:
+main
+  │
+  └── login-feature
+  *code trong branch login-feature
+
+_____________________________________________
+2. Xem các Branch
+</> Terminal:
+    git branch
+
+ví dụ kết quả:
+    * main
+    dấu * nghĩa là bạn đang đứng
+
+_____________________________________________
+3. Tạo branch mới:
+</> Terminal:
+    git branch login-feature
+
+lúc này Git tạo ra Branch:
+main
+login-feature
+
+nhưng bạn vẫn đang ở main
+
+_____________________________________________
+4. Chuyển sang branch khác
+</> Terminal:
+    git checkout login-feature
+
+hoặc
+
+</> Terminal:
+    git switch login-feature
+
+sau đó branch sẽ là:
+* login-feature
+
+_____________________________________________
+5. Tạo bracnh và chuyển luôn
+</> Terminal:
+    git checkout -b login-feature
+
+hoặc
+
+</> Terminal:
+    git switch -c login-feature
+
+GIT sẽ: 
+Tạo branch + chuyển sang branch đó
+
+_____________________________________________
+6. Merge Bracnh (Gộp code)
+sau khi code xong trong branch:
+    login-feature
+
+bạn cần gộp vào main
+• Bước 1: chuyển về main
+</> Terminal:
+    git switch main
+
+• Bước 2: Merge
+</> Terminal:
+    git merge login-feature
+
+    *GIT sẽ gộp code từ branch đó vào main
+
+
+Ví dụ cho WordFlow thật của Dev
+</> Terminal:
+    git switch -c login-feature
+
+code xong:
+</> Terminal:
+    git add  .
+    git commit -m "create login page"
+    git push
+
+sau đó quay về main:
+</> Terminal:
+    git switch main
+    git merge login-feature
+
+SƠ ĐỒ:
+main
+ │
+ └── login-feature
+        │
+        ├ code login
+        ├ fix bug
+        │
+        └ merge
+             ↓
+            main
+
+
+_____________________________________________
+Các lệnh cần nhớ hôm nay:
+
+git branch
+git branch name
+git switch name
+git switch -c name
+git merge name
