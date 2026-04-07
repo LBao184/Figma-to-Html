@@ -11,7 +11,6 @@ console.log(result); // Kết quả: "Hello, World!"
 let firstName = "Le";
 let lastName = "Bao";
 let fullName = firstName + " " + lastName;
-
 console.log(fullName); // Kết quả: "Le Bao"
 
 // 2. toUpperCase - toLowerCase - Chuyển đổi chữ hoa và chữ thường
