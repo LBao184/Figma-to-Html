@@ -1,4 +1,4 @@
-// Toán tử (DeathMath) trong JavaScript
+// Toán tử (Arithmetic) trong JavaScript
 // Phép tính
 /*
 =

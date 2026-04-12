@@ -1,4 +1,4 @@
-// Switch case statement example
+// Switch case
 // Ví dụ: 
 let n = prompt("Nhập 1 số bất kì:");
 let vl;
