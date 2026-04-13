@@ -16,7 +16,6 @@ console.log("Giai thừa của " + n + " là: " + tinhGiaiThua(n));
 
 
 
-/* 
 //25.5 Giải bài tập - đên 25.6 :
 
 //Tính giai thừa
@@ -28,13 +27,12 @@ let GT = (n) => {
   return giaithua;
 };
 // Bước nhập liệu :
-let n = +prompt(`Nhập số nguyên n: `);
-while (isNaN(n) || !Number.isInteger(n) || n <= 0) {
-  n = +prompt(`Nhập sai, hãy nhập lại: `);
+let m = +prompt(`Nhập số nguyên n: `);
+while (isNaN(m) || !Number.isInteger(m) || m <= 0) {
+  m = +prompt(`Nhập sai, hãy nhập lại: `);
 }
-console.log(`Số nguyên ${n} hợp lệ`);
+console.log(`Số nguyên ${m} hợp lệ`);
 
 //Xuất kết quả :
-let result = GT(n);
-console.log(`Kết quả ${n}! là ${result}`);
-*/
+let result = GT(m);
+console.log(`Kết quả ${m}! là ${result}`);
