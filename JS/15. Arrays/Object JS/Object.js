@@ -5,8 +5,8 @@
 let student = {
 // Thuộc tính (ta có thể nói student có 4 thuộc tính)
 // key có quy tắc giống với quy tắc đặt tên biến
-fullName: "Tran Nhu Nhong",
-birthYear: 2005, 
+fullName: "Le Thien Bao",
+birthYear: 2010, 
     address: {
         city: "Hanoi",
         country: "Vietnam",

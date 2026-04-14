@@ -11,7 +11,7 @@ if (dtb >= 5.0) {
 let age = parseInt(prompt("Nhập tuổi của bạn: "));
 if (age < 13) {
     console.log("Bạn là trẻ em.");
-} else if (age >= 13 && age < 20) {
+} else if (age >= 15 && age < 20) {
     console.log("Bạn là thanh thiếu niên.");
 } else if (age >= 20 && age < 60) {
     console.log("Bạn là người trưởng thành.");
