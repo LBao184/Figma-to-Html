@@ -13,6 +13,8 @@ const SinhVien = function(fullName, ID, birthYear, homeTown) {
 };
 console.log(typeof SinhVien);
 
+
+
 // Cách 2: Function Declaration (Thường dùng hơn)
 function Student(fullName, ID, birthYear, homeTown) {
     this.fullName = fullName;

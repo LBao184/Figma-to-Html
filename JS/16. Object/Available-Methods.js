@@ -1,5 +1,5 @@
 // Các phương thức có sẵn trong JS
-// 1. Object.keys(obj):                 Trả về 1 mảng chứa tất cả các ký tự key(tên thuộc tính) của đối tượng.
+// 1. Object.keys(obj):                 Trả về 1 mảng chứa tất cả các ký tự keys(tên thuộc tính) của đối tượng.
 // 2. Object.values(obj):               Trả về 1 mảng chứa tất cả các giá trị của đối tượng.
 // 3. Object.entries(obj):              Trả về 1 mảng chứa các cặp [Khóa, giá trị] của đối tượng dưới dạng mảng con.
 // 4. Object.assign(target, source):    Sao chép các thuộc tính từ 1 hoặc nhiều đối tượng nguồn(Source) vào 1 đối tượng đích(target).
