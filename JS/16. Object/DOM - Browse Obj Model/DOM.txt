@@ -1,0 +1,152 @@
+🌳 DOM là gì (hiểu sâu hơn một chút)
+👉 Khi trình duyệt đọc HTML, nó biến toàn bộ trang thành một cây (tree)
+
+Ví dụ:
+
+<html>
+  <body>
+    <h1 id="title">Hello</h1>
+    <p>Text</p>
+  </body>
+</html>
+
+👉 DOM sẽ là dạng cây:
+
+document
+ └── html
+      └── body
+           ├── h1
+           └── p
+
+💡 Mỗi phần tử = node (nút)
+
+🔹 1. Các loại node trong DOM
+Element node: <div>, <h1>...
+Text node: nội dung text
+Attribute node: id, class
+
+👉 Ví dụ:
+
+<h1 id="title">Hello</h1>
+h1 → element
+"Hello" → text
+id="title" → attribute
+
+
+🔹 2. Truy cập phần tử (cực quan trọng)
+✅ Cách phổ biến nhất:
+document.getElementById("title");
+document.querySelector("#title");
+document.querySelectorAll("p");
+
+👉 Trong project thật:
+querySelector dùng nhiều nhất
+
+
+🔹 3. Thay đổi nội dung
+let el = document.getElementById("title");
+el.innerText = "Xin chào";     // text
+el.innerHTML = "<b>Hello</b>"; // có HTML
+
+⚠️ Khác nhau:
+
+innerText → chỉ text
+innerHTML → có thể chèn HTML (nguy hiểm nếu không kiểm soát)
+
+
+🔹 4. Thay đổi CSS
+el.style.color = "red";
+el.style.fontSize = "30px";
+
+
+🔹 5. Làm việc với class
+el.classList.add("active");
+el.classList.remove("active");
+el.classList.toggle("active");
+
+👉 Đây là cách dùng phổ biến trong project thật
+
+
+🔹 6. Tạo và thêm phần tử
+let div = document.createElement("div");
+div.innerText = "Hello";
+document.body.appendChild(div);
+
+
+🔹 7. Xóa phần tử
+div.remove();
+
+
+🔹 8. Event (phần quan trọng nhất 🔥)
+👉 DOM mạnh nhất ở event
+let btn = document.querySelector("button");
+btn.addEventListener("click", function() {
+    alert("Bạn vừa click!");
+});
+
+
+🔥 9. Event object (nâng cao hơn chút)
+btn.addEventListener("click", function(event) {
+    console.log(event.target);
+});
+
+👉 Biết:
+
+click vào đâu
+lấy thông tin user
+
+
+🔹 10. DOM Traversal (di chuyển trong cây)
+el.parentElement
+el.children
+el.nextElementSibling
+el.previousElementSibling
+
+👉 Rất hay dùng khi xử lý UI
+
+🧠 11. Cách DOM hoạt động trong thực tế
+
+👉 Khi bạn:
+click
+nhập input
+load trang
+
+👉 DOM sẽ:
+Nhận sự kiện
+JS xử lý
+Cập nhật lại giao diện
+
+
+⚠️ 12. Những lỗi người mới hay gặp
+❌ Quên document
+❌ Sai selector (#, ., tag)
+❌ DOM chưa load đã chạy JS
+
+👉 Fix:
+document.addEventListener("DOMContentLoaded", () => {
+    // code ở đây
+});
+
+
+🚀 13. Ví dụ mini (rất thực tế)
+<button id="btn">Click</button>
+<p id="text">Hello</p>
+let btn = document.getElementById("btn");
+let text = document.getElementById("text");
+
+btn.addEventListener("click", () => {
+    text.innerText = "Đã đổi!";
+});
+
+
+🎯 Tổng kết (mức “hiểu thật”)
+DOM giúp bạn:
+
+Lấy phần tử
+Sửa nội dung
+Sửa giao diện
+Tạo / xóa element
+Xử lý sự kiện
+
+👉 Nói ngắn gọn:
+DOM = cầu nối giữa JavaScript và HTML
