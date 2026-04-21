@@ -19,12 +19,13 @@ console.log(
     `ngày ${myDate4.getDate()}/Tháng ${myDate4.getMonth() + 1}/Năm ${myDate4.getFullYear()}`
 )
 
+// Thêm số 0 để xuất ngày tháng dưới dạng 01. 02. ...
 let prefixDate = myDate4.getDate() < 10 ? "0" : "";
 let prefixMonth = myDate4.getMonth() + 1 < 10 ? "0" : "";
 console.log(
     `ngày ${prefixDate}${myDate4.getDate()}/Tháng ${prefixMonth}${myDate4.getMonth() + 1}/Năm ${myDate4.getFullYear()}`
 )
-// Kết quả: "ngày 18/Tháng 4/Năm 2026"
+// Kết quả: "ngày 18/Tháng 04/Năm 2026"
 
 
 // setTimeout: thực thi một hàm sau một khoảng thời gian delay nhất định
