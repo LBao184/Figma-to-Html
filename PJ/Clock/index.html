@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đồng Hồ Thông Minh</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body data-background-theme="chill">
+    <div class="background-orb orb-1"></div>
+    <div class="background-orb orb-2"></div>
+    <div class="background-orb orb-3"></div>
+
+    <div class="container">
+        <header class="header">
+            <div>
+                <p class="eyebrow">Time OS</p>
+                <h1 class="title">ĐỒNG HỒ THÔNG MINH</h1>
+            </div>
+            <div class="header-controls">
+                <button class="theme-btn" id="themeBtn" title="Chế độ tối hoặc sáng">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="theme-btn" id="helpBtn" title="Phím tắt">
+                    <i class="fas fa-question-circle"></i>
+                </button>
+                <button class="fullscreen-btn" id="fullscreenBtn" title="Toàn màn hình">
+                    <i class="fas fa-expand"></i>
+                </button>
+            </div>
+        </header>
+
+        <nav class="nav-tabs">
+            <button class="nav-btn active" data-tab="clock">Đồng hồ</button>
+            <button class="nav-btn" data-tab="stopwatch">Bấm giờ</button>
+            <button class="nav-btn" data-tab="timer">Hẹn giờ</button>
+            <button class="nav-btn" data-tab="alarm">Báo thức</button>
+            <button class="nav-btn" data-tab="pomodoro">Pomodoro</button>
+            <button class="nav-btn" data-tab="birthday">Sinh nhật</button>
+            <button class="nav-btn" data-tab="deepwork">Focus</button>
+            <button class="nav-btn" data-tab="timetravel">Du hành</button>
+            <button class="nav-btn" data-tab="memory">Ký ức</button>
+            <button class="nav-btn" data-tab="deadline">Deadline</button>
+            <button class="nav-btn" data-tab="currency">Xu thời gian</button>
+            <button class="nav-btn" data-tab="worldclock">Thế giới</button>
+            <button class="nav-btn" data-tab="settings">Cài đặt</button>
+        </nav>
+
+        <main class="main-content">
+            <section class="tab-content active" id="clock">
+                <div class="clock-container">
+                    <div class="analog-clock-wrapper">
+                        <canvas id="analogClock" class="analog-clock"></canvas>
+                        <div class="clock-center"></div>
+                    </div>
+
+                    <div class="digital-section card">
+                        <div class="digital-clock" id="digitalClock">00:00:00</div>
+                        <button class="copy-btn" id="copyTimeBtn" title="Sao chép giờ">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                        <div class="date-display" id="dateDisplay">Thứ Hai, 01/01/2024</div>
+                        <div class="lunar-display" id="lunarDisplay">Âm lịch: ngày 01 tháng 01</div>
+                        <div class="timezone-display" id="timezoneDisplay">UTC+07:00</div>
+                    </div>
+                </div>
+
+                <div class="themes-section card">
+                    <h3>Chủ đề đồng hồ</h3>
+                    <div class="themes-grid">
+                        <button class="theme-option active" data-theme="modern">
+                            <i class="fas fa-palette"></i>
+                            <span>Hiện đại</span>
+                        </button>
+                        <button class="theme-option" data-theme="elegant">
+                            <i class="fas fa-gem"></i>
+                            <span>Thanh lịch</span>
+                        </button>
+                        <button class="theme-option" data-theme="minimal">
+                            <i class="fas fa-feather"></i>
+                            <span>Tối giản</span>
+                        </button>
+                        <button class="theme-option" data-theme="neon">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Neon</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tab-content" id="stopwatch">
+                <div class="stack-layout">
+                    <div class="display-card card">
+                        <div class="stopwatch-display">
+                            <div class="stopwatch-time" id="stopwatchTime">00:00:00</div>
+                            <div class="stopwatch-milliseconds" id="stopwatchMs">.000</div>
+                        </div>
+                    </div>
+
+                    <div class="action-grid">
+                        <button class="btn btn-primary" id="startBtn"><i class="fas fa-play"></i> Bắt đầu</button>
+                        <button class="btn btn-warning" id="pauseBtn" disabled><i class="fas fa-pause"></i> Tạm dừng</button>
+                        <button class="btn btn-danger" id="resetBtn"><i class="fas fa-redo"></i> Đặt lại</button>
+                        <button class="btn btn-info" id="lapBtn" disabled><i class="fas fa-flag"></i> Ghi lần</button>
+                        <button class="btn btn-info" id="historyBtn"><i class="fas fa-history"></i> Lịch sử</button>
+                    </div>
+
+                    <div class="laps-section card">
+                        <h3>Lượt ghi</h3>
+                        <ul class="laps-list" id="lapsList"></ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tab-content" id="timer">
+                <div class="stack-layout">
+                    <div class="timer-input-section card">
+                        <div class="timer-inputs">
+                            <div class="input-group">
+                                <label>Giờ</label>
+                                <input type="number" id="timerHours" min="0" max="23" value="0">
+                            </div>
+                            <div class="input-group">
+                                <label>Phút</label>
+                                <input type="number" id="timerMinutes" min="0" max="59" value="1">
+                            </div>
+                            <div class="input-group">
+                                <label>Giây</label>
+                                <input type="number" id="timerSeconds" min="0" max="59" value="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="display-card card">
+                        <div class="timer-display">
+                            <div class="timer-time" id="timerDisplay">00:01:00</div>
+                            <div class="timer-progress">
+                                <div class="timer-progress-bar" id="timerProgressBar"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-grid">
+                        <button class="btn btn-primary" id="timerStartBtn"><i class="fas fa-play"></i> Bắt đầu</button>
+                        <button class="btn btn-warning" id="timerPauseBtn" disabled><i class="fas fa-pause"></i> Tạm dừng</button>
+                        <button class="btn btn-danger" id="timerResetBtn"><i class="fas fa-redo"></i> Đặt lại</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tab-content" id="alarm">
+                <div class="two-column-layout">
+                    <div class="card">
+                        <h3>Thêm báo thức mới</h3>
+                        <div class="alarm-inputs">
+                            <input type="time" id="alarmTime" value="07:00">
+                            <input type="text" id="alarmLabel" placeholder="Tên báo thức, ví dụ: Dậy sớm">
+                            <button class="btn btn-primary" id="addAlarmBtn"><i class="fas fa-plus"></i> Thêm</button>
+                        </div>
+
+                        <div class="alarm-tools">
+                            <button class="btn btn-info" id="exportAlarmsBtn" title="Xuất báo thức">
+                                <i class="fas fa-download"></i> Xuất
+                            </button>
+                            <label class="btn btn-info" title="Nhập báo thức">
+                                <i class="fas fa-upload"></i> Nhập
+                                <input type="file" id="importAlarmsInput" accept=".json" style="display:none;">
+                            </label>
+                        </div>
+
+                        <div class="ringtone-section">
+                            <h4>Nhạc chuông báo thức</h4>
+                            <label class="btn btn-info ringtone-picker" title="Chọn tệp MP3 cho báo thức">
+                                <i class="fas fa-music"></i> Chọn MP3
+                                <input type="file" id="ringtoneInput" accept=".mp3,audio/mpeg,audio/*" style="display:none;">
+                            </label>
+                            <p class="ringtone-name" id="ringtoneName">Đang dùng âm thanh mặc định</p>
+                            <div class="ringtone-actions">
+                                <button class="btn btn-info" id="testRingtoneBtn"><i class="fas fa-volume-up"></i> Nghe thử</button>
+                                <button class="btn btn-danger" id="stopRingtoneBtn"><i class="fas fa-stop"></i> Dừng nhạc</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Danh sách báo thức</h3>
+                        <ul class="alarms-list" id="alarmsList"></ul>
+                        <p class="no-alarms" id="noAlarms">Chưa có báo thức nào</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tab-content" id="pomodoro">
+                <div class="pomodoro-container">
+                    <div class="pomodoro-board card">
+                        <div class="pomodoro-mode" id="pomodoroMode">Sẵn sàng bắt đầu</div>
+                        <div class="pomodoro-time" id="pomodoroDisplay">25:00</div>
+                        <div class="pomodoro-task" id="pomodoroCurrentTask">Chưa có nhiệm vụ</div>
+                        <div class="pomodoro-meta">
+                            <span id="pomodoroCycle">Chu kỳ: 0/4</span>
+                            <span id="pomodoroStatus">Trạng thái: Đang chờ</span>
+                        </div>
+                        <div class="pomodoro-progress">
+                            <div class="pomodoro-progress-bar" id="pomodoroProgressBar"></div>
+                        </div>
+                    </div>
+
+                    <div class="pomodoro-config card">
+                        <h3>Chế độ tập trung Pomodoro</h3>
+                        <div class="pomodoro-inputs">
+                            <div class="input-group">
+                                <label>Nhiệm vụ</label>
+                                <input type="text" id="pomodoroTask" placeholder="Nhập công việc cần tập trung">
+                            </div>
+                            <div class="input-group">
+                                <label>Phút tập trung</label>
+                                <input type="number" id="pomodoroFocusMinutes" min="1" max="180" value="25">
+                            </div>
+                            <div class="input-group">
+                                <label>Nghỉ ngắn</label>
+                                <input type="number" id="pomodoroShortBreak" min="1" max="30" value="5">
+                            </div>
+                            <div class="input-group">
+                                <label>Nghỉ dài</label>
+                                <input type="number" id="pomodoroLongBreak" min="5" max="60" value="20">
+                            </div>
+                        </div>
+                        <p class="pomodoro-note">
+                            Sau mỗi lần tập trung, đồng hồ tự chuyển sang nghỉ ngắn. Sau 4 chu kỳ, hệ thống tự nghỉ dài rồi quay lại tập trung.
+                        </p>
+                    </div>
+
+                    <div class="pomodoro-buttons action-grid">
+                        <button class="btn btn-primary" id="pomodoroStartBtn"><i class="fas fa-play"></i> Bắt đầu</button>
+                        <button class="btn btn-warning" id="pomodoroPauseBtn" disabled><i class="fas fa-pause"></i> Tạm dừng</button>
+                        <button class="btn btn-info" id="pomodoroSkipBtn"><i class="fas fa-forward"></i> Bỏ qua bước</button>
+                        <button class="btn btn-danger" id="pomodoroResetBtn"><i class="fas fa-redo"></i> Đặt lại</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tab-content" id="birthday">
+                <div class="birthday-layout">
+                    <div class="card profile-card">
+                        <h3>Hồ sơ ngày đặc biệt</h3>
+                        <div class="info-grid">
+                            <div class="input-group">
+                                <label>Tên của bạn</label>
+                                <input type="text" id="profileName" placeholder="Nhập tên của bạn">
+                            </div>
+                            <div class="input-group">
+                                <label>Ngày sinh</label>
+                                <input type="date" id="birthDateInput">
+                            </div>
+                            <div class="input-group">
+                                <label>Ngày thi quan trọng</label>
+                                <input type="date" id="examDateInput">
+                            </div>
+                            <div class="input-group">
+                                <label>Mật khẩu bí mật</label>
+                                <input type="password" id="secretPasswordInput" placeholder="Đặt mật khẩu riêng">
+                            </div>
+                        </div>
+                        <div class="action-grid compact-grid">
+                            <button class="btn btn-primary" id="saveProfileBtn"><i class="fas fa-save"></i> Lưu hồ sơ</button>
+                            <button class="btn btn-info" id="futureMessageBtn"><i class="fas fa-message"></i> Tin nhắn tương lai</button>
+                        </div>
+                    </div>
+
+                    <div class="birthday-hero card" id="birthdayHero">
+                        <div class="birthday-universe"></div>
+                        <p class="eyebrow">Chế độ sinh nhật</p>
+                        <h2 id="birthdayHeadline">Hôm nay là ngày đặc biệt của cậu…</h2>
+                        <p id="birthdaySubline">Thiết lập ngày sinh để website tự nhận ra và chuyển sang chế độ sinh nhật.</p>
+                        <div class="countdown-chip" id="birthdayCountdownChip">Còn -- ngày nữa đến sinh nhật của cậu ⏳</div>
+                        <div class="celebration-banner" id="celebrationBanner">🎉 Chúc mừng sinh nhật 🎉</div>
+                    </div>
+
+                    <div class="gift-card card">
+                        <h3>Hộp quà bí ẩn</h3>
+                        <button class="gift-box" id="giftBoxBtn" aria-label="Mở hộp quà">🎁</button>
+                        <p id="giftMessage">Nhấn vào hộp quà để mở lời chúc bất ngờ.</p>
+                        <div class="confetti-layer" id="confettiLayer"></div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Thống kê cuộc đời</h3>
+                        <div class="stat-grid">
+                            <div class="stat-card">
+                                <span class="stat-label">Tuổi</span>
+                                <strong id="lifeAge">--</strong>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-label">Đã sống</span>
+                                <strong id="lifeDays">-- ngày</strong>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-label">Giờ ngủ ước tính</span>
+                                <strong id="lifeSleep">-- giờ</strong>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-label">Giờ chơi game ước tính</span>
+                                <strong id="lifeGame">-- giờ</strong>
+                            </div>
+                        </div>
+                        <div class="life-progress-wrap">
+                            <div class="life-progress-head">
+                                <span>Thanh tiến trình cuộc đời</span>
+                                <span id="lifeProgressText">Bạn đã sống được 0% cuộc đời</span>
+                            </div>
+                            <div class="timer-progress">
+                                <div class="timer-progress-bar" id="lifeProgressBar"></div>
+                            </div>
+                            <p class="small-note" id="examCountdownText">Countdown kỳ thi sẽ hiện ở đây.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Tin nhắn từ chính cậu trong tương lai</h3>
+                        <div class="future-letter" id="futureLetter">
+                            Chào cậu… tớ là cậu của 5 năm sau. Thiết lập hồ sơ rồi nhấn nút để đọc tin nhắn mỗi lần một khác.
+                        </div>
+                    </div>
+
+                    <div class="card secret-card">
+                        <h3>Trang bí mật chỉ mình mở được</h3>
+                        <div class="info-grid">
+                            <div class="input-group">
+                                <label>Nhập mật khẩu</label>
+                                <input type="password" id="secretUnlockInput" placeholder="Nhập mật khẩu đã lưu">
+                            </div>
+                            <div class="input-group">
+                                <label>Giữ nút 5 giây</label>
+                                <button class="btn btn-info" id="secretHoldBtn"><i class="fas fa-lock-open"></i> Giữ để mở</button>
+                            </div>
+                        </div>
+                        <div class="action-grid compact-grid">
+                            <button class="btn btn-primary" id="secretUnlockBtn"><i class="fas fa-key"></i> Mở trang bí mật</button>
+                        </div>
+                        <div class="secret-panel" id="secretPanel">
+                            <h4>Mục tiêu và ước mơ tương lai</h4>
+                            <textarea id="secretGoalsInput" rows="4" placeholder="Viết mục tiêu, ước mơ hoặc lời nhắc riêng cho bản thân"></textarea>
+                            <button class="btn btn-primary" id="saveSecretGoalsBtn"><i class="fas fa-floppy-disk"></i> Lưu ghi chú bí mật</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tab-content" id="deepwork">
+                <div class="deepwork-layout">
+                    <div class="deepwork-hero card" id="deepworkHero">
+                        <p class="eyebrow">Bộ đếm tập trung sâu</p>
+                        <h2 id="deepWorkGoalDisplay">Chọn mục tiêu và đốt thời gian thật nghiêm túc</h2>
+                        <div class="deepwork-time" id="deepWorkDisplay">45:00</div>
+                        <div class="deepwork-meta">
+                            <span id="deepWorkLevel">Level 1</span>
+                            <span id="deepWorkXp">XP: 0/100</span>
+                            <span id="deepWorkTabWarning">! Rời tab sẽ đặt lại bộ đếm</span>
+                        </div>
+                        <div class="timer-progress">
+                            <div class="timer-progress-bar" id="deepWorkProgressBar"></div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Cấu hình phiên tập trung sâu</h3>
+                        <div class="info-grid">
+                            <div class="input-group">
+                                <label>Mục tiêu</label>
+                                <input type="text" id="deepWorkGoalInput" placeholder="Ví dụ: Học tập">
+                            </div>
+                            <div class="input-group">
+                                <label>Số phút tập trung</label>
+                                <input type="number" id="deepWorkMinutesInput" min="5" max="240" value="45">
+                            </div>
+                            <div class="input-group">
+                                <label>Nhạc nền tập trung</label>
+                                <select id="deepWorkAmbientSelect">
+                                    <option value="lofi">Lo-fi</option>
+                                    <option value="rain">Mưa</option>
+                                    <option value="space">Không gian</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label>Xu hiện tại</label>
+                                <div class="read-only-chip" id="deepWorkCoinMirror">0 xu</div>
+                            </div>
+                        </div>
+                        <div class="action-grid">
+                            <button class="btn btn-primary" id="deepWorkStartBtn"><i class="fas fa-fire"></i> Bắt đầu tập trung sâu</button>
+                            <button class="btn btn-warning" id="deepWorkPauseBtn" disabled><i class="fas fa-pause"></i> Tạm dừng</button>
+                            <button class="btn btn-danger" id="deepWorkResetBtn"><i class="fas fa-rotate-left"></i> Đặt lại</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tab-content" id="timetravel">
+                <div class="two-column-layout">
+                    <div class="card">
+                        <h3>Giao diện du hành thời gian</h3>
+                        <div class="input-group">
+                            <label>Kéo timeline</label>
+                            <input type="range" id="timeTravelSlider" min="1980" max="2050" value="2026">
+                        </div>
+                        <div class="travel-year" id="timeTravelYear">2026</div>
+                        <div class="travel-mode" id="timeTravelMode">Hiện tại</div>
+                        <p id="timeTravelDescription">
+                            Năm hiện tại mang giao diện cân bằng giữa glassmorphism, dữ liệu realtime và cảm giác hệ điều hành thời gian.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Điều khiển tốc độ thời gian</h3>
+                        <div class="input-group">
+                            <label>Tốc độ thời gian</label>
+                            <input type="range" id="timeSpeedSlider" min="1" max="300" value="60">
+                        </div>
+                        <div class="travel-year speed-number" id="timeSpeedLabel">60%</div>
+                        <div class="sim-clock" id="simClockDisplay">00:00:00</div>
+                        <p id="timeSpeedDescription">
+                            Kéo về bên trái để slow motion, đẩy sang phải để fast forward. Đồng hồ mô phỏng sẽ chạy nhanh hoặc chậm theo lựa chọn của bạn.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tab-content" id="memory">
+                <div class="memory-layout">
+                    <div class="card">
+                        <h3>Ký ức thời gian</h3>
+                        <div class="info-grid">
+                            <div class="input-group">
+                                <label>Tiêu đề ký ức</label>
+                                <input type="text" id="memoryTitleInput" placeholder="Ví dụ: Ngày đầu học JavaScript">
+                            </div>
+                            <div class="input-group">
+                                <label>Ngày của ký ức</label>
+                                <input type="date" id="memoryDateInput">
+                            </div>
+                            <div class="input-group">
+                                <label>Ảnh</label>
+                                <input type="file" id="memoryImageInput" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Ghi chú</label>
+                            <textarea id="memoryNoteInput" rows="5" placeholder="Viết một đoạn ký ức, suy nghĩ, cảm xúc hoặc điều đáng nhớ"></textarea>
+                        </div>
+                        <div class="action-grid compact-grid">
+                            <button class="btn btn-primary" id="saveMemoryBtn"><i class="fas fa-plus"></i> Lưu ký ức</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Ngày này năm trước</h3>
+                        <div class="memory-highlight" id="memoryFlashback">Chưa có ký ức nào trùng ngày hôm nay.</div>
+                    </div>
+
+                    <div class="card full-width">
+                        <h3>Dòng thời gian ký ức</h3>
+                        <div class="memory-feed" id="memoryFeed"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tab-content" id="deadline">
+                <div class="deadline-layout">
+                    <div class="card">
+                        <h3>Chế độ hoảng deadline</h3>
+                        <div class="info-grid">
+                            <div class="input-group">
+                                <label>Tên deadline</label>
+                                <input type="text" id="deadlineTitleInput" placeholder="Ví dụ: Nộp đồ án, ôn kiểm tra, hoàn thành video">
+                            </div>
+                            <div class="input-group">
+                                <label>Thời điểm deadline</label>
+                                <input type="datetime-local" id="deadlineDateInput">
+                            </div>
+                        </div>
+                        <div class="action-grid compact-grid">
+                            <button class="btn btn-primary" id="saveDeadlineBtn"><i class="fas fa-hourglass-half"></i> Lưu deadline</button>
+                        </div>
+                    </div>
+
+                    <div class="deadline-monitor card" id="deadlineMonitor">
+                        <p class="eyebrow">Bộ theo dõi áp lực</p>
+                        <h2 id="deadlineTitleDisplay">Chưa có deadline</h2>
+                        <div class="deadline-time" id="deadlineCountdownDisplay">-- ngày -- giờ -- phút</div>
+                        <div class="deadline-status" id="deadlineStatusDisplay">Nhập deadline để kích hoạt chế độ căng thẳng dần.</div>
+                        <div class="timer-progress">
+                            <div class="timer-progress-bar" id="deadlineProgressBar"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tab-content" id="currency">
+                <div class="currency-layout">
+                    <div class="currency-hero card">
+                        <p class="eyebrow">Thời gian = giá trị</p>
+                        <h2 class="currency-count" id="coinCountDisplay">0 xu</h2>
+                        <p id="coinSummary">Mỗi giờ tập trung tốt sẽ đổi được xu. Lãng phí thời gian sẽ làm mất xu.</p>
+                        <div class="action-grid compact-grid">
+                            <button class="btn btn-primary" id="earnCoinBtn"><i class="fas fa-briefcase"></i> + Làm việc 1 giờ</button>
+                            <button class="btn btn-danger" id="wasteCoinBtn"><i class="fas fa-gamepad"></i> - Lãng phí 1 giờ</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Cửa hàng nâng cấp</h3>
+                        <div class="shop-grid" id="shopGrid">
+                            <button class="shop-card" data-item="focus_skin" data-cost="20">
+                                <span>Giao diện tập trung</span>
+                                <strong>20 xu</strong>
+                            </button>
+                            <button class="shop-card" data-item="extra_message" data-cost="35">
+                                <span>Mở thêm thư tương lai</span>
+                                <strong>35 xu</strong>
+                            </button>
+                            <button class="shop-card" data-item="cosmic_glow" data-cost="50">
+                                <span>Hào quang ngân hà</span>
+                                <strong>50 xu</strong>
+                            </button>
+                        </div>
+                        <p class="small-note" id="shopStatusText">Mua nâng cấp để lưu vào kho đồ thời gian của bạn.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tab-content" id="worldclock">
+                <div class="two-column-layout">
+                    <div class="card">
+                        <h3>Chọn múi giờ</h3>
+                        <div class="inline-row">
+                            <select id="timezoneSelect">
+                                <option value="UTC">UTC (Phối hợp thế giới)</option>
+                                <option value="Asia/Ho_Chi_Minh">Hà Nội - Hồ Chí Minh (UTC+7)</option>
+                                <option value="Asia/Bangkok">Bangkok (UTC+7)</option>
+                                <option value="Asia/Tokyo">Tokyo (UTC+9)</option>
+                                <option value="Asia/Shanghai">Shanghai (UTC+8)</option>
+                                <option value="Asia/Hong_Kong">Hong Kong (UTC+8)</option>
+                                <option value="Asia/Singapore">Singapore (UTC+8)</option>
+                                <option value="Europe/London">London (UTC+0)</option>
+                                <option value="Europe/Paris">Paris (UTC+1)</option>
+                                <option value="Europe/Berlin">Berlin (UTC+1)</option>
+                                <option value="America/New_York">New York (UTC-5)</option>
+                                <option value="America/Los_Angeles">Los Angeles (UTC-8)</option>
+                                <option value="America/Chicago">Chicago (UTC-6)</option>
+                                <option value="America/Toronto">Toronto (UTC-5)</option>
+                                <option value="Australia/Sydney">Sydney (UTC+10)</option>
+                                <option value="Pacific/Auckland">Auckland (UTC+12)</option>
+                            </select>
+                            <button class="btn btn-primary" id="addTimezoneBtn"><i class="fas fa-plus"></i> Thêm</button>
+                        </div>
+                    </div>
+
+                    <div class="timezones-grid" id="timezonesGrid"></div>
+                </div>
+            </section>
+
+            <section class="tab-content" id="settings">
+                <div class="settings-container">
+                    <div class="card">
+                        <h3>Cài đặt hiển thị</h3>
+                        <div class="setting-group">
+                            <label for="timeFormatSelect">Định dạng giờ</label>
+                            <select id="timeFormatSelect">
+                                <option value="24h">24 giờ (00:00:00)</option>
+                                <option value="12h">12 giờ (AM/PM)</option>
+                            </select>
+                        </div>
+                        <div class="setting-group">
+                            <label>Chế độ màn hình</label>
+                            <button class="btn btn-info" id="darkModeToggle"><i class="fas fa-moon"></i> Bật chế độ tối</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Chủ đề nền động</h3>
+                        <p class="settings-subtitle" id="backgroundThemeLabel">Đang dùng: Chill</p>
+                        <div class="background-theme-grid">
+                            <button class="background-theme-option active" data-background-theme="chill">Chill</button>
+                            <button class="background-theme-option" data-background-theme="rain">Mưa</button>
+                            <button class="background-theme-option" data-background-theme="sunset">Hoàng hôn</button>
+                            <button class="background-theme-option" data-background-theme="storm">Bão</button>
+                            <button class="background-theme-option" data-background-theme="love">Tình yêu</button>
+                            <button class="background-theme-option" data-background-theme="neon">Neon</button>
+                            <button class="background-theme-option" data-background-theme="cyberpunk">Cyberpunk</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Dữ liệu</h3>
+                        <div class="action-grid compact-grid">
+                            <button class="btn btn-warning" id="clearHistoryBtn"><i class="fas fa-trash"></i> Xóa lịch sử bấm giờ</button>
+                            <button class="btn btn-warning" id="clearAllBtn"><i class="fas fa-exclamation-triangle"></i> Xóa tất cả dữ liệu</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Thông tin</h3>
+                        <p><strong>Phiên bản:</strong> 2.0.0</p>
+                        <p><strong>Ngôn ngữ:</strong> Tiếng Việt</p>
+                        <p><strong>Lưu trữ:</strong> LocalStorage trên máy cục bộ</p>
+                        <p class="small-note">Ứng dụng sẽ lưu hồ sơ sinh nhật, ký ức, xu thời gian, deadline và các thiết lập ngay trên trình duyệt của bạn.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <audio id="alarmAudio" preload="auto"></audio>
+
+        <div id="helpModal" class="modal">
+            <div class="modal-content card">
+                <span class="close">&times;</span>
+                <h2>Phím tắt</h2>
+                <div class="shortcuts-list">
+                    <div class="shortcut">
+                        <strong>Bấm giờ</strong>
+                        <ul>
+                            <li><code>Space</code> - Bắt đầu hoặc tạm dừng</li>
+                            <li><code>L</code> - Ghi lần</li>
+                            <li><code>Ctrl+R</code> - Đặt lại</li>
+                        </ul>
+                    </div>
+                    <div class="shortcut">
+                        <strong>Hẹn giờ</strong>
+                        <ul>
+                            <li><code>Space</code> - Bắt đầu hoặc tạm dừng</li>
+                            <li><code>Ctrl+R</code> - Đặt lại</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
